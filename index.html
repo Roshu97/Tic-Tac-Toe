@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tic-Tac-Toe</h1>
+        
+        <div id="player-setup" class="player-setup">
+            <h2>Game Settings</h2>
+            <div class="player-inputs">
+                <div class="player-input">
+                    <label for="player-x">Player X:</label>
+                    <input type="text" id="player-x" placeholder="Enter name" value="Player X">
+                </div>
+                <div class="player-input">
+                    <label for="player-o">Player O:</label>
+                    <input type="text" id="player-o" placeholder="Enter name" value="Player O">
+                </div>
+            </div>
+            <div class="ai-controls">
+                <div class="ai-toggle">
+                    <label for="ai-toggle">Play against AI:</label>
+                    <input type="checkbox" id="ai-toggle">
+                </div>
+                <div class="difficulty-selector">
+                    <label for="difficulty">AI Difficulty:</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="save-names">Save Names</button>
+                <button id="clear-scores">Clear Scores</button>
+            </div>
+        </div>
+        
+        <div class="scoreboard">
+            <div class="score-card">
+                <h3 id="player-x-name">Player X</h3>
+                <p id="score-x">0</p>
+            </div>
+            <div class="score-card">
+                <h3>Draws</h3>
+                <p id="score-draw">0</p>
+            </div>
+            <div class="score-card">
+                <h3 id="player-o-name">Player O</h3>
+                <p id="score-o">0</p>
+            </div>
+        </div>
+        
+        <div class="status-container">
+            <div id="status">Player X's turn</div>
+        </div>
+        
+        <div class="game-board">
+            <div class="cell" data-cell-index="0"></div>
+            <div class="cell" data-cell-index="1"></div>
+            <div class="cell" data-cell-index="2"></div>
+            <div class="cell" data-cell-index="3"></div>
+            <div class="cell" data-cell-index="4"></div>
+            <div class="cell" data-cell-index="5"></div>
+            <div class="cell" data-cell-index="6"></div>
+            <div class="cell" data-cell-index="7"></div>
+            <div class="cell" data-cell-index="8"></div>
+        </div>
+        
+        <button id="restart">Restart Game</button>
+        
+        <div class="game-history">
+            <h3>Game History</h3>
+            <div id="history-list" class="history-list"></div>
+        </div>
+    </div>
+    
+    <!-- Audio elements for sound effects -->
+    <audio id="click-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-simple-countdown-922.mp3"></audio>
+    <audio id="win-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3"></audio>
+    <audio id="draw-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-neutral-bot-pinball-tone-3137.mp3"></audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
